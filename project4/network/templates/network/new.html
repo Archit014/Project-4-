@@ -1,0 +1,20 @@
+{% extends "network/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+   
+ 
+    <div id="post-view">
+        <h3>New Post</h3>
+        <div class="block">
+            <form id="post-form" action="{% url 'new' %}" method="post">
+                {% csrf_token %}
+                <textarea class="form-control" id="compose-body" placeholder="Body" name="content"></textarea>
+                <br>
+                <input type="submit" class="btn btn-primary" value="Post">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
